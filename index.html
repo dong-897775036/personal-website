@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>妆点 - 首页</title>
-    <link rel="stylesheet" href="style.css">
+    <title>牧点 - 首页</title>
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
     <div class="container">
         <!-- 顶部 Logo 和导航 -->
         <header class="header">
-            <h1 class="logo">妆点</h1>
+            <div class="logo-wrap">
+                <img src="logo.png" alt="牧点" class="logo-img">
+            </div>
             <nav class="nav">
                 <a href="#" class="nav-link active">首页</a>
             </nav>
@@ -20,21 +22,21 @@
         <main class="main">
             <!-- 主轮播区域 -->
             <section class="hero">
-                <button class="hero-arrow hero-prev" aria-label="上一个">◀</button>
+                <button class="hero-arrow hero-prev" aria-label="上一个">&#9664;</button>
                 <div class="hero-content" id="heroContent">
                     <span class="placeholder-text">作品</span>
                 </div>
-                <button class="hero-arrow hero-next" aria-label="下一个">▶</button>
+                <button class="hero-arrow hero-next" aria-label="下一个">&#9654;</button>
             </section>
 
             <!-- 缩略图网格 -->
             <section class="thumbnails" id="thumbnails">
-                <div class="thumbnail active" data-index="0">作品</div>
-                <div class="thumbnail" data-index="1">作品</div>
-                <div class="thumbnail" data-index="2">作品</div>
-                <div class="thumbnail" data-index="3">作品</div>
-                <div class="thumbnail" data-index="4">作品</div>
-                <div class="thumbnail" data-index="5">作品</div>
+                <div class="thumbnail active" data-index="0"><span>作品</span></div>
+                <div class="thumbnail" data-index="1"><span>作品</span></div>
+                <div class="thumbnail" data-index="2"><span>作品</span></div>
+                <div class="thumbnail" data-index="3"><span>作品</span></div>
+                <div class="thumbnail" data-index="4"><span>作品</span></div>
+                <div class="thumbnail" data-index="5"><span>作品</span></div>
             </section>
 
             <!-- 分隔线 -->
@@ -42,6 +44,6 @@
         </main>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=3"></script>
 </body>
 </html>
