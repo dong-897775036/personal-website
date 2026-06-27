@@ -3,337 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的设计作品集 - 设计师主页</title>
+    <title>妆点 - 首页</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- 顶部导航栏 -->
-    <header class="top-nav">
-        <div class="nav-container">
-            <div class="logo">
-                <span class="logo-icon">🎨</span>
-                <span class="logo-text">设计作品</span>
-            </div>
+    <div class="container">
+        <!-- 顶部 Logo 和导航 -->
+        <header class="header">
+            <h1 class="logo">妆点</h1>
+            <nav class="nav">
+                <a href="#" class="nav-link active">首页</a>
+            </nav>
+        </header>
 
-            <div class="search-box">
-                <input type="text" placeholder="搜一搜感兴趣的设计...">
-                <button aria-label="搜索">🔍</button>
-            </div>
-
-            <div class="nav-actions">
-                <button class="btn-home">首页</button>
-                <button class="btn-login">登录</button>
-                <button class="btn-theme" id="themeToggle" aria-label="切换主题">🌙</button>
-            </div>
-        </div>
-    </header>
-
-    <!-- 主体 -->
-    <div class="main-container">
-        <!-- 左侧边栏 -->
-        <aside class="sidebar">
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">导航</h3>
-                <ul class="sidebar-menu">
-                    <li class="active"><span class="icon">🏠</span>首页</li>
-                    <li><span class="icon">📤</span>发布作品</li>
-                    <li><span class="icon">⭐</span>看点觅眼的</li>
-                    <li><span class="icon">🔥</span>领掉三火</li>
-                    <li><span class="icon">🌟</span>发现更多</li>
-                    <li><span class="icon">🎯</span>设计大赛 <span class="hot-tag">HOT</span></li>
-                    <li><span class="icon">📅</span>活动圈</li>
-                </ul>
-            </div>
-
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">掌握点有用的</h3>
-                <ul class="sidebar-menu">
-                    <li><span class="icon">🖼️</span>私房展示</li>
-                    <li><span class="icon">📚</span>精选Sketch</li>
-                    <li><span class="icon">🤖</span>AI工作室</li>
-                    <li><span class="icon">🧩</span>小素材</li>
-                    <li><span class="icon">🎓</span>院校招</li>
-                    <li><span class="icon">👔</span>设计师</li>
-                </ul>
-            </div>
-
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">学点干货</h3>
-                <ul class="sidebar-menu">
-                    <li><span class="icon">📖</span>AI实战指南</li>
-                    <li><span class="icon">🎓</span>专业课程</li>
-                </ul>
-            </div>
-
-            <div class="sidebar-section">
-                <h3 class="sidebar-title">找点财路</h3>
-                <ul class="sidebar-menu">
-                    <li><span class="icon">💼</span>全职工作</li>
-                    <li><span class="icon">💎</span>兼职外快</li>
-                </ul>
-            </div>
-        </aside>
-
-        <!-- 主内容 -->
-        <main class="content">
-            <!-- 顶部 Banner 轮播 -->
-            <section class="banner">
-                <div class="banner-carousel">
-                    <div class="banner-slide active" style="background: linear-gradient(135deg, #1a1a1a 0%, #ff5722 50%, #00bcd4 100%);">
-                        <div class="banner-content">
-                            <div class="banner-title-group">
-                                <h1>欢迎来到</h1>
-                                <h1 class="big-text">我的设计世界</h1>
-                                <p class="subtitle">#创意无限 #灵感无限</p>
-                            </div>
-                            <div class="banner-tags">
-                                <span class="banner-tag">海量设计作品</span>
-                                <span class="banner-tag">每日灵感素材</span>
-                            </div>
-                            <button class="btn-primary">查看作品 →</button>
-                        </div>
-                    </div>
-                    <div class="banner-slide" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                        <div class="banner-content">
-                            <h1>AI设计革命</h1>
-                            <p>探索AI辅助设计的无限可能</p>
-                            <button class="btn-primary">立即体验 →</button>
-                        </div>
-                    </div>
-                    <div class="banner-slide" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                        <div class="banner-content">
-                            <h1>设计大赛 · 丰厚奖金</h1>
-                            <p>展示才华，赢取万元大奖</p>
-                            <button class="btn-primary">参与比赛 →</button>
-                        </div>
-                    </div>
+        <!-- 主内容区 -->
+        <main class="main">
+            <!-- 主轮播区域 -->
+            <section class="hero">
+                <button class="hero-arrow hero-prev" aria-label="上一个">◀</button>
+                <div class="hero-content" id="heroContent">
+                    <span class="placeholder-text">作品</span>
                 </div>
-                <button class="banner-prev" aria-label="上一张">‹</button>
-                <button class="banner-next" aria-label="下一张">›</button>
-                <div class="banner-dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
+                <button class="hero-arrow hero-next" aria-label="下一个">▶</button>
             </section>
 
-            <!-- 分类标签 -->
-            <section class="tabs">
-                <ul class="tab-list">
-                    <li class="active">作品推荐</li>
-                    <li>热门客户 <span class="badge">HOT</span></li>
-                    <li>我的关注</li>
-                    <li>榜单</li>
-                </ul>
-                <div class="tab-actions">
-                    <span class="tab-link active">首页推荐</span>
-                    <span class="tab-link">为你推荐</span>
-                </div>
+            <!-- 缩略图网格 -->
+            <section class="thumbnails" id="thumbnails">
+                <div class="thumbnail active" data-index="0">作品</div>
+                <div class="thumbnail" data-index="1">作品</div>
+                <div class="thumbnail" data-index="2">作品</div>
+                <div class="thumbnail" data-index="3">作品</div>
+                <div class="thumbnail" data-index="4">作品</div>
+                <div class="thumbnail" data-index="5">作品</div>
             </section>
 
-            <!-- 作品网格 -->
-            <section class="works-grid" id="worksGrid">
-                <!-- 作品卡片 - 12张 -->
-                <div class="work-card">
-                    <div class="work-cover" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);">
-                        <span class="work-type">插画</span>
-                        <span class="work-fav">♡</span>
-                    </div>
-                    <div class="work-info">
-                        <h3 class="work-title">城市印象系列 - 夜景</h3>
-                        <div class="work-author">by 设计师</div>
-                        <div class="work-meta">
-                            <span>👁 1.2k</span>
-                            <span>❤️ 234</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="work-card">
-                    <div class="work-cover" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                        <span class="work-type">海报</span>
-                        <span class="work-fav">♡</span>
-                    </div>
-                    <div class="work-info">
-                        <h3 class="work-title">夏日清凉活动主视觉</h3>
-                        <div class="work-author">by 设计师</div>
-                        <div class="work-meta">
-                            <span>👁 2.4k</span>
-                            <span>❤️ 567</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="work-card">
-                    <div class="work-cover" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
-                        <span class="work-type">UI</span>
-                        <span class="work-fav">♡</span>
-                    </div>
-                    <div class="work-info">
-                        <h3 class="work-title">音乐App界面设计</h3>
-                        <div class="work-author">by 设计师</div>
-                        <div class="work-meta">
-                            <span>👁 3.1k</span>
-                            <span>❤️ 789</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="work-card">
-                    <div class="work-cover" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                        <span class="work-type">品牌</span>
-                        <span class="work-fav">♡</span>
-                    </div>
-                    <div class="work-info">
-                        <h3 class="work-title">咖啡品牌视觉设计</h3>
-                        <div class="work-author">by 设计师</div>
-                        <div class="work-meta">
-                            <span>👁 1.8k</span>
-                            <span>❤️ 432</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="work-card">
-                    <div class="work-cover" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
-                        <span class="work-type">插画</span>
-                        <span class="work-fav">♡</span>
-                    </div>
-                    <div class="work-info">
-                        <h3 class="work-title">动漫风格人物设计</h3>
-                        <div class="work-author">by 设计师</div>
-                        <div class="work-meta">
-                            <span>👁 5.2k</span>
-                            <span>❤️ 1.2k</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="work-card">
-                    <div class="work-cover" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
-                        <span class="work-type">海报</span>
-                        <span class="work-fav">♡</span>
-                    </div>
-                    <div class="work-info">
-                        <h3 class="work-title">文艺活动宣传海报</h3>
-                        <div class="work-author">by 设计师</div>
-                        <div class="work-meta">
-                            <span>👁 1.5k</span>
-                            <span>❤️ 321</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="work-card">
-                    <div class="work-cover" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
-                        <span class="work-type">UI</span>
-                        <span class="work-fav">♡</span>
-                    </div>
-                    <div class="work-info">
-                        <h3 class="work-title">电商App界面设计</h3>
-                        <div class="work-author">by 设计师</div>
-                        <div class="work-meta">
-                            <span>👁 2.7k</span>
-                            <span>❤️ 654</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="work-card">
-                    <div class="work-cover" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
-                        <span class="work-type">插画</span>
-                        <span class="work-fav">♡</span>
-                    </div>
-                    <div class="work-info">
-                        <h3 class="work-title">美食插画系列作品</h3>
-                        <div class="work-author">by 设计师</div>
-                        <div class="work-meta">
-                            <span>👁 1.9k</span>
-                            <span>❤️ 456</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="work-card">
-                    <div class="work-cover" style="background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);">
-                        <span class="work-type">品牌</span>
-                        <span class="work-fav">♡</span>
-                    </div>
-                    <div class="work-info">
-                        <h3 class="work-title">文创品牌包装设计</h3>
-                        <div class="work-author">by 设计师</div>
-                        <div class="work-meta">
-                            <span>👁 1.6k</span>
-                            <span>❤️ 387</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="work-card">
-                    <div class="work-cover" style="background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);">
-                        <span class="work-type">海报</span>
-                        <span class="work-fav">♡</span>
-                    </div>
-                    <div class="work-info">
-                        <h3 class="work-title">公益广告海报设计</h3>
-                        <div class="work-author">by 设计师</div>
-                        <div class="work-meta">
-                            <span>👁 1.4k</span>
-                            <span>❤️ 298</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="work-card">
-                    <div class="work-cover" style="background: linear-gradient(135deg, #cfd9df 0%, #e2ebf0 100%);">
-                        <span class="work-type">UI</span>
-                        <span class="work-fav">♡</span>
-                    </div>
-                    <div class="work-info">
-                        <h3 class="work-title">简洁风后台管理系统</h3>
-                        <div class="work-author">by 设计师</div>
-                        <div class="work-meta">
-                            <span>👁 2.1k</span>
-                            <span>❤️ 512</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="work-card">
-                    <div class="work-cover" style="background: linear-gradient(135deg, #ff6e7f 0%, #bfe9ff 100%);">
-                        <span class="work-type">插画</span>
-                        <span class="work-fav">♡</span>
-                    </div>
-                    <div class="work-info">
-                        <h3 class="work-title">梦幻风景插画合集</h3>
-                        <div class="work-author">by 设计师</div>
-                        <div class="work-meta">
-                            <span>👁 3.5k</span>
-                            <span>❤️ 876</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <!-- 分隔线 -->
+            <div class="divider"></div>
         </main>
     </div>
-
-    <!-- 底部 -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-links">
-                <span>语言</span>
-                <span>举报中心</span>
-                <span>关于我们</span>
-                <span>资质</span>
-                <span>隐私协议</span>
-                <span>企业服务</span>
-                <span>帮助中心</span>
-            </div>
-            <div class="footer-copyright">
-                © 2026 我的设计作品集 · 保留所有权利
-            </div>
-        </div>
-    </footer>
 
     <script src="script.js"></script>
 </body>
