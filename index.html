@@ -3,228 +3,335 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人网站</title>
+    <title>我的设计作品集 - 设计师主页</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- 导航栏 -->
-    <nav class="navbar">
+    <!-- 顶部导航栏 -->
+    <header class="top-nav">
         <div class="nav-container">
-            <div class="nav-logo">👤 个人品牌</div>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link">首页</a></li>
-                <li><a href="#about" class="nav-link">关于我</a></li>
-                <li><a href="#projects" class="nav-link">项目</a></li>
-                <li><a href="#contact" class="nav-link">联系</a></li>
-                <li><button class="theme-toggle" id="themeToggle">🌗</button></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- 首页区域 -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-avatar">👤</div>
-            <h1 class="hero-title">你好，我是 <span class="highlight">开发者</span></h1>
-            <p class="hero-subtitle">全栈开发者 | 设计师 | 创作者</p>
-            <p class="hero-description">
-                热爱技术，专注于创造优雅的解决方案。拥有5年+的开发经验，擅长 Web 开发、移动应用和用户体验设计。
-            </p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">查看项目</a>
-                <a href="#contact" class="btn btn-secondary">联系我</a>
-            </div>
-        </div>
-        <div class="hero-scroll">
-            <span>向下滚动</span>
-            <div class="scroll-arrow">↓</div>
-        </div>
-    </section>
-
-    <!-- 关于我 -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">关于我</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>我是一名充满激情的全栈开发者，专注于创造优雅、高效的解决方案。</p>
-                    <p>拥有5年以上的开发经验，我擅长使用现代技术栈构建 Web 应用和移动应用。我相信技术应该服务于人，因此我特别注重用户体验和可访问性。</p>
-                    <p>当我不在编码时，你喜欢摄影、阅读和探索新技术。我始终相信终身学习的重要性，并乐于分享知识。</p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">完成项目</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">5年+</div>
-                        <div class="stat-label">开发经验</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">30+</div>
-                        <div class="stat-label">满意客户</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">投入度</div>
-                    </div>
-                </div>
+            <div class="logo">
+                <span class="logo-icon">🎨</span>
+                <span class="logo-text">设计作品</span>
             </div>
 
-            <div class="skills">
-                <h3 class="skills-title">技能专长</h3>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <div class="skill-icon">🌐</div>
-                        <h4>前端开发</h4>
-                        <p>React, Vue, TypeScript, HTML5, CSS3</p>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">⚙️</div>
-                        <h4>后端开发</h4>
-                        <p>Node.js, Python, Java, PostgreSQL</p>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">📱</div>
-                        <h4>移动开发</h4>
-                        <p>React Native, Flutter, Swift</p>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon">🎨</div>
-                        <h4>UI/UX 设计</h4>
-                        <p>Figma, Sketch, Adobe XD</p>
-                    </div>
-                </div>
+            <div class="search-box">
+                <input type="text" placeholder="搜一搜感兴趣的设计...">
+                <button aria-label="搜索">🔍</button>
+            </div>
+
+            <div class="nav-actions">
+                <button class="btn-home">首页</button>
+                <button class="btn-login">登录</button>
+                <button class="btn-theme" id="themeToggle" aria-label="切换主题">🌙</button>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- 项目展示 -->
-    <section id="projects" class="section section-alt">
-        <div class="container">
-            <h2 class="section-title">精选项目</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">🚀</div>
-                    <div class="project-content">
-                        <h3 class="project-title">电商平台</h3>
-                        <p class="project-description">基于 React + Node.js 的全栈电商解决方案，支持多商户入驻、支付集成和数据分析。</p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">MongoDB</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">🔗 演示</a>
-                            <a href="#" class="project-link">💻 代码</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">📱</div>
-                    <div class="project-content">
-                        <h3 class="project-title">任务管理 App</h3>
-                        <p class="project-description">跨平台移动应用，帮助团队高效协作。支持实时同步、任务分配和进度追踪。</p>
-                        <div class="project-tags">
-                            <span class="tag">React Native</span>
-                            <span class="tag">Firebase</span>
-                            <span class="tag">Redux</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">🔗 演示</a>
-                            <a href="#" class="project-link">💻 代码</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">📊</div>
-                    <div class="project-content">
-                        <h3 class="project-title">数据可视化平台</h3>
-                        <p class="project-description">交互式数据仪表盘，支持实时数据更新、自定义图表和导出功能。</p>
-                        <div class="project-tags">
-                            <span class="tag">Vue.js</span>
-                            <span class="tag">D3.js</span>
-                            <span class="tag">Python</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">🔗 演示</a>
-                            <a href="#" class="project-link">💻 代码</a>
-                        </div>
-                    </div>
-                </div>
+    <!-- 主体 -->
+    <div class="main-container">
+        <!-- 左侧边栏 -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">导航</h3>
+                <ul class="sidebar-menu">
+                    <li class="active"><span class="icon">🏠</span>首页</li>
+                    <li><span class="icon">📤</span>发布作品</li>
+                    <li><span class="icon">⭐</span>看点觅眼的</li>
+                    <li><span class="icon">🔥</span>领掉三火</li>
+                    <li><span class="icon">🌟</span>发现更多</li>
+                    <li><span class="icon">🎯</span>设计大赛 <span class="hot-tag">HOT</span></li>
+                    <li><span class="icon">📅</span>活动圈</li>
+                </ul>
             </div>
-        </div>
-    </section>
 
-    <!-- 联系我 -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">联系我</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <p>如果您有项目合作意向，或者只是想打个招呼，都非常欢迎！</p>
-                    <div class="contact-items">
-                        <div class="contact-item">
-                            <span class="contact-icon">📧</span>
-                            <div>
-                                <h4>邮箱</h4>
-                                <p>your.email@example.com</p>
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">掌握点有用的</h3>
+                <ul class="sidebar-menu">
+                    <li><span class="icon">🖼️</span>私房展示</li>
+                    <li><span class="icon">📚</span>精选Sketch</li>
+                    <li><span class="icon">🤖</span>AI工作室</li>
+                    <li><span class="icon">🧩</span>小素材</li>
+                    <li><span class="icon">🎓</span>院校招</li>
+                    <li><span class="icon">👔</span>设计师</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">学点干货</h3>
+                <ul class="sidebar-menu">
+                    <li><span class="icon">📖</span>AI实战指南</li>
+                    <li><span class="icon">🎓</span>专业课程</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">找点财路</h3>
+                <ul class="sidebar-menu">
+                    <li><span class="icon">💼</span>全职工作</li>
+                    <li><span class="icon">💎</span>兼职外快</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- 主内容 -->
+        <main class="content">
+            <!-- 顶部 Banner 轮播 -->
+            <section class="banner">
+                <div class="banner-carousel">
+                    <div class="banner-slide active" style="background: linear-gradient(135deg, #1a1a1a 0%, #ff5722 50%, #00bcd4 100%);">
+                        <div class="banner-content">
+                            <div class="banner-title-group">
+                                <h1>欢迎来到</h1>
+                                <h1 class="big-text">我的设计世界</h1>
+                                <p class="subtitle">#创意无限 #灵感无限</p>
                             </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">📱</span>
-                            <div>
-                                <h4>电话</h4>
-                                <p>+86 138 xxxx xxxx</p>
+                            <div class="banner-tags">
+                                <span class="banner-tag">海量设计作品</span>
+                                <span class="banner-tag">每日灵感素材</span>
                             </div>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">📍</span>
-                            <div>
-                                <h4>位置</h4>
-                                <p>中国，深圳</p>
-                            </div>
+                            <button class="btn-primary">查看作品 →</button>
                         </div>
                     </div>
-                    <div class="social-links">
-                        <a href="#" class="social-link" title="GitHub">💻</a>
-                        <a href="#" class="social-link" title="LinkedIn">💼</a>
-                        <a href="#" class="social-link" title="Twitter">🐦</a>
-                        <a href="#" class="social-link" title="个人博客">📝</a>
+                    <div class="banner-slide" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <div class="banner-content">
+                            <h1>AI设计革命</h1>
+                            <p>探索AI辅助设计的无限可能</p>
+                            <button class="btn-primary">立即体验 →</button>
+                        </div>
+                    </div>
+                    <div class="banner-slide" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <div class="banner-content">
+                            <h1>设计大赛 · 丰厚奖金</h1>
+                            <p>展示才华，赢取万元大奖</p>
+                            <button class="btn-primary">参与比赛 →</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="banner-prev" aria-label="上一张">‹</button>
+                <button class="banner-next" aria-label="下一张">›</button>
+                <div class="banner-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </section>
+
+            <!-- 分类标签 -->
+            <section class="tabs">
+                <ul class="tab-list">
+                    <li class="active">作品推荐</li>
+                    <li>热门客户 <span class="badge">HOT</span></li>
+                    <li>我的关注</li>
+                    <li>榜单</li>
+                </ul>
+                <div class="tab-actions">
+                    <span class="tab-link active">首页推荐</span>
+                    <span class="tab-link">为你推荐</span>
+                </div>
+            </section>
+
+            <!-- 作品网格 -->
+            <section class="works-grid" id="worksGrid">
+                <!-- 作品卡片 - 12张 -->
+                <div class="work-card">
+                    <div class="work-cover" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);">
+                        <span class="work-type">插画</span>
+                        <span class="work-fav">♡</span>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">城市印象系列 - 夜景</h3>
+                        <div class="work-author">by 设计师</div>
+                        <div class="work-meta">
+                            <span>👁 1.2k</span>
+                            <span>❤️ 234</span>
+                        </div>
                     </div>
                 </div>
 
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" class="form-input" placeholder="您的姓名" required>
+                <div class="work-card">
+                    <div class="work-cover" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <span class="work-type">海报</span>
+                        <span class="work-fav">♡</span>
                     </div>
-                    <div class="form-group">
-                        <input type="email" class="form-input" placeholder="您的邮箱" required>
+                    <div class="work-info">
+                        <h3 class="work-title">夏日清凉活动主视觉</h3>
+                        <div class="work-author">by 设计师</div>
+                        <div class="work-meta">
+                            <span>👁 2.4k</span>
+                            <span>❤️ 567</span>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-input" placeholder="主题" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-input form-textarea" placeholder="您的消息" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">发送消息</button>
-                </form>
-            </div>
-        </div>
-    </section>
+                </div>
 
-    <!-- 页脚 -->
+                <div class="work-card">
+                    <div class="work-cover" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <span class="work-type">UI</span>
+                        <span class="work-fav">♡</span>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">音乐App界面设计</h3>
+                        <div class="work-author">by 设计师</div>
+                        <div class="work-meta">
+                            <span>👁 3.1k</span>
+                            <span>❤️ 789</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="work-cover" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <span class="work-type">品牌</span>
+                        <span class="work-fav">♡</span>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">咖啡品牌视觉设计</h3>
+                        <div class="work-author">by 设计师</div>
+                        <div class="work-meta">
+                            <span>👁 1.8k</span>
+                            <span>❤️ 432</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="work-cover" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                        <span class="work-type">插画</span>
+                        <span class="work-fav">♡</span>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">动漫风格人物设计</h3>
+                        <div class="work-author">by 设计师</div>
+                        <div class="work-meta">
+                            <span>👁 5.2k</span>
+                            <span>❤️ 1.2k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="work-cover" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                        <span class="work-type">海报</span>
+                        <span class="work-fav">♡</span>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">文艺活动宣传海报</h3>
+                        <div class="work-author">by 设计师</div>
+                        <div class="work-meta">
+                            <span>👁 1.5k</span>
+                            <span>❤️ 321</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="work-cover" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+                        <span class="work-type">UI</span>
+                        <span class="work-fav">♡</span>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">电商App界面设计</h3>
+                        <div class="work-author">by 设计师</div>
+                        <div class="work-meta">
+                            <span>👁 2.7k</span>
+                            <span>❤️ 654</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="work-cover" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                        <span class="work-type">插画</span>
+                        <span class="work-fav">♡</span>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">美食插画系列作品</h3>
+                        <div class="work-author">by 设计师</div>
+                        <div class="work-meta">
+                            <span>👁 1.9k</span>
+                            <span>❤️ 456</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="work-cover" style="background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);">
+                        <span class="work-type">品牌</span>
+                        <span class="work-fav">♡</span>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">文创品牌包装设计</h3>
+                        <div class="work-author">by 设计师</div>
+                        <div class="work-meta">
+                            <span>👁 1.6k</span>
+                            <span>❤️ 387</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="work-cover" style="background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);">
+                        <span class="work-type">海报</span>
+                        <span class="work-fav">♡</span>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">公益广告海报设计</h3>
+                        <div class="work-author">by 设计师</div>
+                        <div class="work-meta">
+                            <span>👁 1.4k</span>
+                            <span>❤️ 298</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="work-cover" style="background: linear-gradient(135deg, #cfd9df 0%, #e2ebf0 100%);">
+                        <span class="work-type">UI</span>
+                        <span class="work-fav">♡</span>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">简洁风后台管理系统</h3>
+                        <div class="work-author">by 设计师</div>
+                        <div class="work-meta">
+                            <span>👁 2.1k</span>
+                            <span>❤️ 512</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="work-cover" style="background: linear-gradient(135deg, #ff6e7f 0%, #bfe9ff 100%);">
+                        <span class="work-type">插画</span>
+                        <span class="work-fav">♡</span>
+                    </div>
+                    <div class="work-info">
+                        <h3 class="work-title">梦幻风景插画合集</h3>
+                        <div class="work-author">by 设计师</div>
+                        <div class="work-meta">
+                            <span>👁 3.5k</span>
+                            <span>❤️ 876</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 底部 -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 个人品牌. 保留所有权利.</p>
-            <p class="footer-sub">用 ❤️ 和 ☕ 制作</p>
+        <div class="footer-content">
+            <div class="footer-links">
+                <span>语言</span>
+                <span>举报中心</span>
+                <span>关于我们</span>
+                <span>资质</span>
+                <span>隐私协议</span>
+                <span>企业服务</span>
+                <span>帮助中心</span>
+            </div>
+            <div class="footer-copyright">
+                © 2026 我的设计作品集 · 保留所有权利
+            </div>
         </div>
     </footer>
 
