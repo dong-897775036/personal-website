@@ -4,39 +4,213 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>牧点 - 首页</title>
-    <link rel="stylesheet" href="style.css?v=3">
+    <style>
+        /* ===== 内联关键样式（保证布局绝对正确） ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; min-height: 100vh; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+            background: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; }
+        button { font-family: inherit; cursor: pointer; border: none; background: none; }
+        img { max-width: 100%; display: block; }
+
+        /* 整体布局：侧边栏 + 主内容 */
+        .layout {
+            display: flex;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        /* 左侧侧边栏 */
+        .sidebar {
+            width: 110px;
+            flex-shrink: 0;
+        }
+        .sidebar .logo-wrap {
+            margin-bottom: 16px;
+            width: 100px;
+        }
+        .sidebar .logo-img {
+            width: 100px;
+            height: auto;
+            display: block;
+        }
+        .sidebar .nav-link {
+            display: inline-block;
+            color: #333;
+            padding: 4px 12px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        .sidebar .nav-link.active {
+            background: #e0e0e0;
+            font-weight: 500;
+        }
+
+        /* 主内容区 */
+        .main {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* 顶部 3 图轮播 */
+        .hero {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            height: 260px;
+        }
+        .hero-track {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            height: 100%;
+        }
+        .hero-item {
+            background: #b0b0b0;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            user-select: none;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .hero-item.hero-side {
+            flex: 0 0 18%;
+            height: 70%;
+            font-size: 14px;
+            opacity: 0.85;
+        }
+        .hero-item.hero-side:hover {
+            background: #a0a0a0;
+            opacity: 1;
+        }
+        .hero-item.hero-main {
+            flex: 1;
+            height: 100%;
+            font-size: 24px;
+        }
+        .hero-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 14px;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-arrow:hover { background: rgba(0,0,0,0.7); }
+        .hero-prev { left: 6px; }
+        .hero-next { right: 6px; }
+
+        /* 缩略图网格 */
+        .thumbnails {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .thumbnail {
+            flex: 0 0 calc((100% - 60px) / 6);
+            aspect-ratio: 16 / 10;
+            background: #b0b0b0;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+            user-select: none;
+        }
+        .thumbnail:hover {
+            background: #a0a0a0;
+            transform: translateY(-2px);
+        }
+        .thumbnail.active {
+            background: #888;
+            box-shadow: 0 0 0 2px #333;
+        }
+
+        /* 分隔线 */
+        .divider {
+            height: 1px;
+            background: #e0e0e0;
+            margin-top: 20px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 900px) {
+            .layout { flex-direction: column; }
+            .sidebar { width: 100%; }
+            .sidebar .logo-wrap { width: 80px; }
+            .sidebar .logo-img { width: 80px; }
+            .thumbnail { flex: 0 0 calc((100% - 36px) / 4); }
+        }
+        @media (max-width: 600px) {
+            .hero { height: 200px; }
+            .hero-item.hero-side { font-size: 12px; }
+            .hero-item.hero-main { font-size: 18px; }
+            .thumbnail { flex: 0 0 calc((100% - 24px) / 3); }
+        }
+        @media (max-width: 480px) {
+            .thumbnail { flex: 0 0 calc((100% - 12px) / 2); }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <!-- 顶部 Logo 和导航 -->
-        <header class="header">
+    <div class="layout">
+        <!-- 左侧侧边栏：Logo + 导航 -->
+        <aside class="sidebar">
             <div class="logo-wrap">
                 <img src="logo.png" alt="牧点" class="logo-img">
             </div>
-            <nav class="nav">
+            <nav>
                 <a href="#" class="nav-link active">首页</a>
             </nav>
-        </header>
+        </aside>
 
         <!-- 主内容区 -->
         <main class="main">
-            <!-- 主轮播区域 -->
+            <!-- 顶部 3 图轮播 -->
             <section class="hero">
-                <button class="hero-arrow hero-prev" aria-label="上一个">&#9664;</button>
-                <div class="hero-content" id="heroContent">
-                    <span class="placeholder-text">作品</span>
+                <button class="hero-arrow hero-prev" aria-label="上一组">&#9664;</button>
+                <div class="hero-track">
+                    <div class="hero-item hero-side" id="heroLeft"><span>作品</span></div>
+                    <div class="hero-item hero-main" id="heroMain"><span>作品</span></div>
+                    <div class="hero-item hero-side" id="heroRight"><span>作品</span></div>
                 </div>
-                <button class="hero-arrow hero-next" aria-label="下一个">&#9654;</button>
+                <button class="hero-arrow hero-next" aria-label="下一组">&#9654;</button>
             </section>
 
             <!-- 缩略图网格 -->
             <section class="thumbnails" id="thumbnails">
-                <div class="thumbnail active" data-index="0"><span>作品</span></div>
-                <div class="thumbnail" data-index="1"><span>作品</span></div>
-                <div class="thumbnail" data-index="2"><span>作品</span></div>
-                <div class="thumbnail" data-index="3"><span>作品</span></div>
-                <div class="thumbnail" data-index="4"><span>作品</span></div>
-                <div class="thumbnail" data-index="5"><span>作品</span></div>
+                <div class="thumbnail active" data-index="0"><span>作品 1</span></div>
+                <div class="thumbnail" data-index="1"><span>作品 2</span></div>
+                <div class="thumbnail" data-index="2"><span>作品 3</span></div>
+                <div class="thumbnail" data-index="3"><span>作品 4</span></div>
+                <div class="thumbnail" data-index="4"><span>作品 5</span></div>
+                <div class="thumbnail" data-index="5"><span>作品 6</span></div>
             </section>
 
             <!-- 分隔线 -->
@@ -44,6 +218,55 @@
         </main>
     </div>
 
-    <script src="script.js?v=3"></script>
+    <script>
+        // 顶部 3 图轮播
+        const heroItems = ['作品 A', '作品 B', '作品 C', '作品 D', '作品 E', '作品 F', '作品 G'];
+        let centerIndex = 0;
+
+        function updateHero() {
+            const total = heroItems.length;
+            const leftIdx = (centerIndex - 1 + total) % total;
+            const rightIdx = (centerIndex + 1) % total;
+            document.querySelector('#heroLeft span').textContent = heroItems[leftIdx];
+            document.querySelector('#heroMain span').textContent = heroItems[centerIndex];
+            document.querySelector('#heroRight span').textContent = heroItems[rightIdx];
+        }
+
+        document.querySelector('.hero-prev').addEventListener('click', () => {
+            centerIndex = (centerIndex - 1 + heroItems.length) % heroItems.length;
+            updateHero();
+        });
+        document.querySelector('.hero-next').addEventListener('click', () => {
+            centerIndex = (centerIndex + 1) % heroItems.length;
+            updateHero();
+        });
+
+        // 缩略图交互
+        const thumbnails = document.querySelectorAll('.thumbnail');
+        thumbnails.forEach((thumb, i) => {
+            thumb.addEventListener('click', () => {
+                thumbnails.forEach(t => t.classList.remove('active'));
+                thumb.classList.add('active');
+                // 点击缩略图时，同步更新顶部轮播
+                centerIndex = i % heroItems.length;
+                updateHero();
+            });
+        });
+
+        // 键盘支持
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                centerIndex = (centerIndex - 1 + heroItems.length) % heroItems.length;
+                updateHero();
+            } else if (e.key === 'ArrowRight') {
+                centerIndex = (centerIndex + 1) % heroItems.length;
+                updateHero();
+            }
+        });
+
+        // 初始化
+        updateHero();
+        console.log('✨ 牧点 - 3图轮播版已加载');
+    </script>
 </body>
 </html>
