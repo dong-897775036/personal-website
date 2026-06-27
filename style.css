@@ -1,5 +1,5 @@
 /* ============================================
-   妆点 - 简洁版样式表
+   牧点 - 简洁版样式表 v3
    ============================================ */
 
 /* 基础重置 */
@@ -9,48 +9,79 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-    background-color: #ffffff;
-    color: #333333;
-    line-height: 1.6;
+html, body {
+    width: 100%;
     min-height: 100vh;
 }
 
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background-color: #ffffff !important;
+    color: #333333;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* 容器 */
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    min-height: 100vh;
 }
 
-/* 顶部 Header */
+/* ============================================
+   顶部 Header
+   ============================================ */
 .header {
     margin-bottom: 16px;
+    width: 100%;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #000000;
+.logo-wrap {
     margin-bottom: 8px;
-    letter-spacing: -0.5px;
+    display: block;
+    width: 100px;
+}
+
+.logo-img {
+    width: 100px;
+    height: auto;
+    display: block;
 }
 
 .nav {
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
 }
 
 .nav-link {
-    text-decoration: none;
+    display: inline-block;
     color: #333333;
     padding: 4px 12px;
     background: #f0f0f0;
     border-radius: 4px;
     font-size: 13px;
     transition: background 0.2s;
-    display: inline-block;
 }
 
 .nav-link:hover {
@@ -62,16 +93,19 @@ body {
     font-weight: 500;
 }
 
-/* 主内容区 */
+/* ============================================
+   主内容区
+   ============================================ */
 .main {
-    padding: 0;
+    width: 100%;
 }
 
-/* 主轮播区域 */
+/* ============================================
+   主轮播区域
+   ============================================ */
 .hero {
     position: relative;
-    display: flex;
-    align-items: center;
+    width: 100%;
     margin-bottom: 16px;
 }
 
@@ -83,10 +117,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #ffffff;
     font-size: 22px;
     cursor: pointer;
     transition: background 0.3s;
+    user-select: none;
 }
 
 .hero-content:hover {
@@ -95,6 +130,7 @@ body {
 
 .placeholder-text {
     user-select: none;
+    pointer-events: none;
 }
 
 .hero-arrow {
@@ -102,13 +138,11 @@ body {
     top: 50%;
     transform: translateY(-50%);
     background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
+    color: #ffffff;
     width: 36px;
     height: 36px;
     border-radius: 50%;
     font-size: 14px;
-    cursor: pointer;
     z-index: 2;
     display: flex;
     align-items: center;
@@ -132,26 +166,36 @@ body {
     right: 12px;
 }
 
-/* 缩略图网格 */
+/* ============================================
+   缩略图网格
+   ============================================ */
 .thumbnails {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    display: flex !important;
+    flex-wrap: wrap;
     gap: 12px;
+    width: 100%;
     margin-bottom: 16px;
 }
 
 .thumbnail {
+    flex: 0 0 calc((100% - 60px) / 6);
+    min-width: 0;
     aspect-ratio: 16 / 10;
     background: #b0b0b0;
     border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #ffffff;
     font-size: 15px;
     cursor: pointer;
     transition: background 0.2s, transform 0.2s;
     user-select: none;
+    box-sizing: border-box;
+}
+
+.thumbnail span {
+    pointer-events: none;
 }
 
 .thumbnail:hover {
@@ -161,22 +205,32 @@ body {
 
 .thumbnail.active {
     background: #888888;
-    box-shadow: 0 0 0 2px #333;
+    box-shadow: 0 0 0 2px #333333;
 }
 
-/* 分隔线 */
+/* ============================================
+   分隔线
+   ============================================ */
 .divider {
+    width: 100%;
     height: 1px;
     background: #e0e0e0;
     margin-top: 20px;
 }
 
-/* 响应式 */
-@media (max-width: 768px) {
-    .thumbnails {
-        grid-template-columns: repeat(3, 1fr);
+/* ============================================
+   响应式
+   ============================================ */
+@media (max-width: 900px) {
+    .thumbnail {
+        flex: 0 0 calc((100% - 36px) / 4);
     }
+}
 
+@media (max-width: 600px) {
+    .thumbnail {
+        flex: 0 0 calc((100% - 24px) / 3);
+    }
     .hero-content {
         height: 180px;
     }
@@ -186,16 +240,13 @@ body {
     .container {
         padding: 16px;
     }
-
-    .thumbnails {
-        grid-template-columns: repeat(2, 1fr);
+    .thumbnail {
+        flex: 0 0 calc((100% - 12px) / 2);
     }
-
     .hero-content {
         height: 160px;
         font-size: 18px;
     }
-
     .hero-arrow {
         width: 32px;
         height: 32px;
